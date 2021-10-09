@@ -1,32 +1,39 @@
 <script>
-import { AspectRatio, ClickableTile, Column, Content, Grid, Row, Tile } from "carbon-components-svelte";
+    import { AspectRatio, ClickableTile, Column, Content, Grid, Row, Tile } from 'carbon-components-svelte';
 
-
+    let list_menu = [
+        { ref: '/sign/in', body: 'PEKERTI' },
+        { ref: 'https://bip.ums.ac.id', body: 'WEBSITE' },
+        { ref: '', body: '' },
+        { ref: '', body: '' },
+    ];
 </script>
 
 <Content>
-	<Grid>
-		<Column>
-			<Row>
-				<Tile class="flex w-full flex-col h-72" light>
-					<h1>Selamat Datang,</h1>
-					<h3>Biro Inovasi Pembelajaran</h3>	  
-				</Tile>
-			</Row>
-		</Column>
-	</Grid>
+    <Grid>
+        <Column>
+            <Row>
+                <Tile class="flex w-full flex-col h-72" light>
+                    <h1>Selamat Datang di,</h1>
+                    <h2>Biro Inovasi Pembelajaran</h2>
+                </Tile>
+            </Row>
+        </Column>
+    </Grid>
 </Content>
 <div class="flex flex-col h-full">
-	<div class="w-full bg-dark-900 p-5">
-		<h4 class="text-light-50">
-			Program Tersedia
-		</h4>
-	</div>
-	<div class="flex flex-row h-full">
-		<ClickableTile href="/pekerti" class="w-1/2">
-			<AspectRatio ratio="16x9">
-				<h4>Pekerti</h4>
-			</AspectRatio>
-		</ClickableTile>
-	</div>
-</div>	  
+    <div class="w-full bg-dark-900 p-5">
+        <h3 class="text-light-50">Program</h3>
+    </div>
+    <div class="flex flex-row h-full">
+        {#each list_menu as menu}
+            <ClickableTile href={menu.ref} class="w-1/4">
+                <AspectRatio>
+                    <div class="w-full h-full justify-center flex items-center">
+                        <h3>{menu.body}</h3>
+                    </div>
+                </AspectRatio>
+            </ClickableTile>
+        {/each}
+    </div>
+</div>

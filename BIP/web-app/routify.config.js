@@ -1,5 +1,5 @@
 module.exports = {
-  routifyDir: '.routify',
-  dynamicImports: true,
-  extensions: ['svelte'],
+    routifyDir: '.routify',
+    dynamicImports: true,
+    extensions: ['svelte'],
 };

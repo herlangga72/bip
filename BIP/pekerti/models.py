@@ -14,7 +14,7 @@ class Peserta(models.Model):
     link_transfer   = models.CharField  (("Bukti Transfer")     , max_length=50)
     link_penugasan  = models.CharField  (("Dokumen Penugasan")  , max_length=50)
     link_kesanggupan= models.CharField  (("Dokumen Kesanggupan"), max_length=50)
-    link_sertifikat  = models.CharField  (("Sertifikat")        , max_length=50, blank=True )
+    link_sertifikat = models.CharField  (("Sertifikat")        , max_length=50, blank=True )
     is_validated    = models.BooleanField(("Status Validasi"))
     gelombang       = models.ForeignKey ( "gelombang"   , verbose_name=("Gelombang"), on_delete=models.CASCADE)
 
@@ -29,5 +29,5 @@ class Gelombang(models.Model):
     gelombang           = models.IntegerField   ("Gelombang"            , primary_key = True)
     start_date          = models.DateField      (("Tanggal Mulai")      , auto_now=False, auto_now_add=False)
     end_date            = models.DateField      (("Tanggal Berakhir")   , auto_now=False, auto_now_add=False)
-    link_openlearning    = models.CharField      ("OpenLearning Link"    , blank=True, max_length=50 )
-    link_akses_kelas      = models.CharField      ("Class Access Code"    , blank=True, max_length=50 )
+    link_openlearning   = models.CharField      ("OpenLearning Link"    , blank=True, max_length=50 )
+    link_akses_kelas    = models.CharField      ("Class Access Code"    , blank=True, max_length=50 )
