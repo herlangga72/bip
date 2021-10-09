@@ -15,7 +15,7 @@
         Grid,
     } from 'carbon-components-svelte';
     import { User20 } from 'carbon-icons-svelte';
-
+    import { url } from '@roxi/routify'
     let user = {
         name: 'Herlangga Yusuf Syailendra',
         email: 'herlangga72@gmail.com',
@@ -26,21 +26,21 @@
             text: 'PEKERTI',
             body: [
                 { text: 'Overview', ref: '' },
-                { text: 'Peserta', ref: '' },
-                { text: 'Penyelenggaraan PEKERTI', ref: '' },
-                { text: 'Media Management', ref: '' }
+                { text: 'Peserta', ref: '/pekerti/peserta' },
+                { text: 'PEKERTI', ref: '/pekerti/gelombang' },
+                { text: 'Media Management', ref: '/pekerti/media' }
             ],
         },
         {
             text: 'Site Management',
-            body: [{ text: 'Users', ref: '' }],
+            body: [{ text: 'Users', ref: '/user_manager' }],
         },
     ];
 
     let isSideNavOpen = false;
 </script>
 
-<Header company="Biro Inovasi Pembelajaran" platformName="Dashboard" bind:isSideNavOpen>
+<Header company="Biro Inovasi Pembelajaran" platformName="Admin Dashboard" bind:isSideNavOpen>
     <div slot="skip-to-content">
         <SkipToContent />
     </div>
@@ -63,7 +63,7 @@
             {#each sidebar as menu_header}
                 <SideNavMenu text={menu_header.text} expanded>
                     {#each menu_header.body as menu}
-                        <SideNavMenuItem href={menu.ref} text={menu.text} />
+                        <SideNavMenuItem href={ $url() + menu.ref} text={menu.text} />
                     {/each}
                 </SideNavMenu>
             {/each}

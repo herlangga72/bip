@@ -25,16 +25,10 @@
         {
             text: 'PEKERTI',
             body: [
-                { text: 'Overview', ref: '' },
-                { text: 'Peserta', ref: '' },
-                { text: 'Penyelenggaraan PEKERTI', ref: '' },
-                { text: 'Media Management', ref: '' }
+                { text: 'Info Peserta', ref: '' },
+                { text: 'Sertifikat', ref: '' },
             ],
-        },
-        {
-            text: 'Site Management',
-            body: [{ text: 'Users', ref: '' }],
-        },
+        }
     ];
 
     let isSideNavOpen = false;

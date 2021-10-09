@@ -1,5 +1,6 @@
 <script>
     import { AspectRatio, ClickableTile, Column, Content, Grid, Row, Tile } from 'carbon-components-svelte';
+    import { fade } from 'svelte/transition';
 
     let list_menu = [
         { ref: '/sign/in', body: 'PEKERTI' },
@@ -14,7 +15,7 @@
         <Column>
             <Row>
                 <Tile class="flex w-full flex-col h-72" light>
-                    <h1>Selamat Datang di,</h1>
+                    <h1>Selamat Datang di</h1>
                     <h2>Biro Inovasi Pembelajaran</h2>
                 </Tile>
             </Row>
@@ -29,7 +30,7 @@
         {#each list_menu as menu}
             <ClickableTile href={menu.ref} class="w-1/4">
                 <AspectRatio>
-                    <div class="w-full h-full justify-center flex items-center">
+                    <div in:fade class="w-full h-full justify-center flex items-center">
                         <h3>{menu.body}</h3>
                     </div>
                 </AspectRatio>
