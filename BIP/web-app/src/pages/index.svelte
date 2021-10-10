@@ -1,15 +1,3 @@
-<script>
-    import { AspectRatio, ClickableTile, Column, Content, Grid, Row, Tile } from 'carbon-components-svelte';
-    import { fade } from 'svelte/transition';
-
-    let list_menu = [
-        { ref: '/sign/in', body: 'PEKERTI' },
-        { ref: 'https://bip.ums.ac.id', body: 'WEBSITE' },
-        { ref: '', body: '' },
-        { ref: '', body: '' },
-    ];
-</script>
-
 <Content>
     <Grid>
         <Column>
@@ -38,3 +26,15 @@
         {/each}
     </div>
 </div>
+
+<script>
+    import { AspectRatio, ClickableTile, Column, Content, Grid, Row, Tile } from 'carbon-components-svelte';
+    import { fade } from 'svelte/transition';
+
+    let list_menu = [
+        { ref: 'https://bip.ums.ac.id/pekerti', body: 'PEKERTI' },
+        { ref: 'https://bip.ums.ac.id', body: 'WEBSITE' },
+        { ref: '', body: '' },
+        { ref: '', body: '' },
+    ];
+</script>

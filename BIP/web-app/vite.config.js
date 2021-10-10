@@ -32,8 +32,9 @@ module.exports = defineConfig(({ mode }) => {
             isProduction && minifyHtml(),
         ],
         build: {
+            assetsDir: 'assets/',
             cssCodeSplit: false,
-            outDir: '../webs/html',
+            outDir: '../website/',
             emptyOutDir: 'true',
             minify: isProduction,
         },

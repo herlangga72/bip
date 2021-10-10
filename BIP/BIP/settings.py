@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'admin_interface',
     'colorfield',    
     'rest_framework',
+    'django.contrib.staticfiles',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -45,8 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'pekerti',
     'website'
-]
-
+    ]
 # admin interface di admin page
 X_FRAME_OPTIONS = 'SAMEORIGIN'
 SILENCED_SYSTEM_CHECKS = ['security.W019']
@@ -72,9 +72,7 @@ ROOT_URLCONF = 'BIP.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [
-            BASE_DIR / "website/html", 
-        ],
+        'DIRS': [ ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -139,12 +137,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
-
-STATIC_URL = '/assets/'
-STATICFILES_DIRS = [
-   BASE_DIR / 'website/html/assets'
-]
-STATIC_ROOT=[BASE_DIR / 'website/html/assets',]
+STATIC_URL='/static/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 

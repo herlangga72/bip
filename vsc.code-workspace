@@ -4,6 +4,9 @@
 			"path": "."
 		},
 		{
+			"path": "BIP/web-app"
+		},
+		{
 			"path": "BIP/web-app/src"
 		}
 	],

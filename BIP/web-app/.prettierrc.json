@@ -6,5 +6,8 @@
     "tabWidth": 4,
     "singleQuote": true,
     "trailingComma": "all",
-    "printWidth": 120
+    "printWidth": 120,
+    "svelteSortOrder": "styles-markup-options-scripts",
+    "svelteAllowShorthand": false,
+    "svelteIndentScriptAndStyle": true
 }

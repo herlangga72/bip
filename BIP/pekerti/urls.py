@@ -8,4 +8,4 @@ urlpatterns = [
     path('api/peserta/<int:pk>/', views.peserta_detail),
     path('api/gelombang/', views.peserta_list),
     path('api/gelombang/<int:pk>/', views.peserta_detail),
-] + static(settings.STATIC_URL , document_root=settings.STATIC_ROOT[0])
+]
