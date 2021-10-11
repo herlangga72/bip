@@ -3,7 +3,7 @@ import { defineConfig } from 'vite';
 import { minify } from 'html-minifier';
 import { optimizeImports, optimizeCss } from 'carbon-preprocess-svelte';
 import windiCss from 'vite-plugin-windicss';
-
+import { VitePWA } from 'vite-plugin-pwa'
 const minifyHtml = () => {
     return {
         name: 'html-transform',
@@ -26,15 +26,20 @@ module.exports = defineConfig(({ mode }) => {
         plugins: [
             windiCss(),
             svelte({
+                onwarn(warning, defaultHandler) {
+                    if (warning.code === 'a11y-mouse-events-have-key-events') return;
+                    defaultHandler(warning)},
                 preprocess: [optimizeImports()],
             }),
             isProduction && optimizeCss(),
             isProduction && minifyHtml(),
+            VitePWA({}),
         ],
         build: {
+            sourcemap: true,
             assetsDir: 'assets/',
             cssCodeSplit: false,
-            outDir: '../website/',
+            // outDir: '../website/',
             emptyOutDir: 'true',
             minify: isProduction,
         },

@@ -1,0 +1,1 @@
+{"version":3,"file":"HeaderUtilities.c4385ce8.js","sources":["../../node_modules/carbon-components-svelte/src/UIShell/GlobalHeader/HeaderUtilities.svelte"],"sourcesContent":["<div class:bx--header__global=\"{true}\">\n  <slot />\n</div>\n"],"names":[],"mappings":"mPAAgC,YAAhC"}
